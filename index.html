@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>yaorongke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手机视频播放器</title>
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .video-container {
+            width: 90%;
+            max-width: 600px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>yaorongke的个人主页</h1>
-    <h1>Hello ~</h1>
+
+<div class="video-container">
+    <video id="my-video" class="video-js" controls preload="auto" data-setup="{}">
+        <source src="your-video-file.mp4" type="video/mp4" />
+        <source src="your-video-file.webm" type="video/webm" />
+        <source src="your-video-file.ogv" type="video/ogg" />
+        您的浏览器不支持HTML5视频标签。
+    </video>
+</div>
+
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+
 </body>
 </html>
