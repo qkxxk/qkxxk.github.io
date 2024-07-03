@@ -52,9 +52,7 @@
       </div>
 
       <div class="video-container bc-sm2 bc-md2 bc-lg2">
-        <video controls>
-          <source src="https://ltshsy.gtimg.com/B_JxNyiJmktHRgresXhfyMegmgGiCvvDsZfFx4jD3wYNl-QMp6whe6oAlgLtTm_o-C/Jx0hmV2TOCkUQ-bc-cLQxIphNOV0LHs3oa0pW-sEoCTljnfS4OqCW4u2zqr4_H00nnr6_7ytkGnzkKBpQjpJkPfDJYA8maaUEpDGNcsOLKoyEkbrcB5yxGzD5dOezL_9oZ4ROj4ZiV15SWFgz6n54-UpU9GMbF8vyun44lzX-KAQq22dVxKB5AG3GHeMJvOUbPi0Wy61JI1wCqgwUz5PPEJmUHZJsT_hIHoeQQlNMV4_5qA0CV7BFEDzU-Npky0A/l0036xw3zj1.321002.ts.m3u8?ver=4" type="video/mp4">
-        </video>
+        <video id="video" controls></video>
       </div>
     </div>
   </div>
@@ -62,6 +60,25 @@
   <script src="main.js"></script>
   <script src="layui/layui.js"></script>
   <script src="iconfont.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    var video = document.getElementById('video');
+    var videoSrc = 'https://ltshsy.gtimg.com/B_JxNyiJmktHRgresXhfyMegmgGiCvvDsZfFx4jD3wYNl-QMp6whe6oAlgLtTm_o-C/Jx0hmV2TOCkUQ-bc-cLQxIphNOV0LHs3oa0pW-sEoCTljnfS4OqCW4u2zqr4_H00nnr6_7ytkGnzkKBpQjpJkPfDJYA8maaUEpDGNcsOLKoyEkbrcB5yxGzD5dOezL_9oZ4ROj4ZiV15SWFgz6n54-UpU9GMbF8vyun44lzX-KAQq22dVxKB5AG3GHeMJvOUbPi0Wy61JI1wCqgwUz5PPEJmUHZJsT_hIHoeQQlNMV4_5qA0CV7BFEDzU-Npky0A/l0036xw3zj1.321002.ts.m3u8?ver=4';
+
+    if (Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+      video.addEventListener('loadedmetadata', function () {
+        video.play();
+      });
+    }
+  </script>
   <div style="display: none">
     <script type="text/javascript" src="https://js.users.51.la/21354177.js"></script>
   </div>
