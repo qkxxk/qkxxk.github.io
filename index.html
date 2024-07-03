@@ -1,195 +1,70 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>党史学习</title>
-    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            background-color: #8B0000; /* 深红色背景与图片搭配 */
-            color: #ecf0f1;
-        }
-        .image-container {
-            width: calc(100% - 20px); /* 减少宽度以留出左右两边的距离 */
-            display: flex;
-            justify-content: center;
-            padding: 10px; /* 上下内边距 */
-            margin: 10px; /* 左右外边距 */
-        }
-        .image-container img {
-            max-width: 100%;
-            border-radius: 10px;
-            
-        }
-        .video-container {
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px; /* 调整顶部外边距 */
-        }
-.video-title {
-    position: absolute;
-    top: -15px; /* 调整标题的位置，使其与视频保持10px的距离 */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-    z-index: 10;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>百年风华 党史学习</title>
+  <!-- HTML -->
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bc.css">
+  <style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-.video-container video {
-    margin-top: 30px; /* 确保视频和标题之间有10px的距离 */
-    width: 100%;
-    border-radius: 10px;
-}
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 10px;
-            margin-top: 10px;
-            width: 100%;
-            transition: opacity 0.3s;
-        }
-        .controls.hidden {
-            opacity: 0;
-        }
-        .play-pause {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .progress-bar {
-            flex: 1;
-            height: 5px;
-            background: #bdc3c7;
-            margin: 0 10px;
-            border-radius: 5px;
-            position: relative;
-            cursor: pointer;
-        }
-        .progress-bar div {
-            height: 100%;
-            background: #e74c3c;
-            width: 0;
-            border-radius: 5px;
-        }
-        .time {
-            font-size: 14px;
-        }
-        .fullscreen {
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
+    .video-container video {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
+
 <body>
-
-<div class="image-container">
-    <img src="./mnt/data/MAIN202201241516213837844166041.jpg" alt="顶部图片">
-</div>
-
-<div class="video-container">
-    <div class="video-title">亢慕义斋</div>
-    <video id="video" src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/83/18/350511883/350511883_nb2-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1719913951&gen=playurlv2&os=08cbv&oi=0&trid=a8adb699da934563afbe0d8f8cc7ca62h&mid=0&platform=html5&og=hw&upsig=b78b063de226a2c35654462290644a2e&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&f=h_0_0&bw=37669&logo=80000000" autoplay></video>
-    <div class="controls" id="controls">
-        <div class="play-pause" id="playPauseBtn">⏸️</div>
-        <div class="progress-bar" id="progressBar">
-            <div></div>
+  <div class="bc_content">
+    <div class="bc-fluid">
+      <div class="bc-row bc-space10">
+        <div class="bc-xs12 bc-sm6 bc-md6 bc-lg6">
+          <div class="bc_mbl bc_box" id="bc_mobile_head">
+            <div class="bc-row">
+              <div class="bc-xs3">
+                <img class="bc_mbl bc_box img-avatar" style="border-radius: 50%;" src="3.jpg">
+              </div>
+              <div class="bc-xs9">
+                <div class="bc-xs12">
+                  <div id="bc_name">百年风华 党史学习</div>
+                  <div id="bc_tip">中国共产党在中国这片古老的土地上，书写了人类发展史上惊天地、泣鬼神的壮丽史诗</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="time" id="timeDisplay">0:00 / 0:00</div>
-        <div class="fullscreen" id="fullscreenBtn">🔲</div>
+        <div class="bc-xs5 bc-sm2 bc-md2 bc-lg2">
+          <div class="bc_box bc_mbl bc_center">第一课：亢慕义斋</div>
+        </div>
+      </div>
+
+      <div class="video-container bc-sm2 bc-md2 bc-lg2">
+        <video controls>
+          <source src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/83/18/350511883/350511883_nb2-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1719913951&gen=playurlv2&os=08cbv&oi=0&trid=a8adb699da934563afbe0d8f8cc7ca62h&mid=0&platform=html5&og=hw&upsig=b78b063de226a2c35654462290644a2e&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&f=h_0_0&bw=37669&logo=80000000" type="video/mp4">
+        </video>
+      </div>
     </div>
-</div>
-
-<script>
-    const video = document.getElementById('video');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const progressBar = document.getElementById('progressBar');
-    const progressBarFill = progressBar.querySelector('div');
-    const timeDisplay = document.getElementById('timeDisplay');
-    const fullscreenBtn = document.getElementById('fullscreenBtn');
-    const controls = document.getElementById('controls');
-    
-    // Play/Pause functionality
-    playPauseBtn.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            playPauseBtn.textContent = '⏸️';
-        } else {
-            video.pause();
-            playPauseBtn.textContent = '▶️';
-        }
-    });
-    
-    // Update progress bar and time display
-    video.addEventListener('timeupdate', () => {
-        const currentTime = video.currentTime;
-        const duration = video.duration;
-        progressBarFill.style.width = `${(currentTime / duration) * 100}%`;
-        
-        const formatTime = time => {
-            const minutes = Math.floor(time / 60);
-            const seconds = Math.floor(time % 60).toString().padStart(2, '0');
-            return `${minutes}:${seconds}`;
-        };
-        
-        timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
-    });
-    
-    // Seek functionality
-    progressBar.addEventListener('click', (e) => {
-        const rect = progressBar.getBoundingClientRect();
-        const pos = (e.pageX - rect.left) / rect.width;
-        video.currentTime = pos * video.duration;
-    });
-    
-    // Fullscreen functionality
-    fullscreenBtn.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-            video.requestFullscreen();
-        } else {
-            document.exitFullscreen();
-        }
-    });
-    
-    // Show/hide controls
-    let timeout;
-    video.addEventListener('mousemove', () => {
-        controls.classList.remove('hidden');
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            if (!video.paused) {
-                controls.classList.add('hidden');
-            }
-        }, 3000);
-    });
-    
-    // Hide controls initially if video is playing
-    video.addEventListener('play', () => {
-        controls.classList.add('hidden');
-    });
-</script>
-
+  </div>
+  <!-- Project -->
+  <script src="main.js"></script>
+  <script src="layui/layui.js"></script>
+  <script src="iconfont.js"></script>
+  <div style="display: none">
+    <script type="text/javascript" src="https://js.users.51.la/21354177.js"></script>
+  </div>
 </body>
-</html>
 
+</html>
