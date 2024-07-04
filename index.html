@@ -52,7 +52,10 @@
       </div>
 
       <div class="video-container bc-sm2 bc-md2 bc-lg2">
-        <video src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/83/18/350511883/350511883_nb2-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1719913951&gen=playurlv2&os=08cbv&oi=0&trid=a8adb699da934563afbe0d8f8cc7ca62h&mid=0&platform=html5&og=hw&upsig=b78b063de226a2c35654462290644a2e&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&f=h_0_0&bw=37669&logo=80000000" autoplay></video>
+        <video controls autoplay>
+          <source src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/83/18/350511883/350511883_nb2-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1719913951&gen=playurlv2&os=08cbv&oi=0&trid=a8adb699da934563afbe0d8f8cc7ca62h&mid=0&platform=html5&og=hw&upsig=b78b063de226a2c35654462290644a2e&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&f=h_0_0&bw=37669&logo=80000000" type="video/mp4">
+          您的浏览器不支持视频标签。
+        </video>
       </div>
     </div>
   </div>
@@ -61,24 +64,6 @@
   <script src="layui/layui.js"></script>
   <script src="iconfont.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    var video = document.getElementById('video');
-    var videoSrc = 'https://upos-sz-mirror08c.bilivideo.com/upgcxcode/83/18/350511883/350511883_nb2-1-16.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1719913951&gen=playurlv2&os=08cbv&oi=0&trid=a8adb699da934563afbe0d8f8cc7ca62h&mid=0&platform=html5&og=hw&upsig=b78b063de226a2c35654462290644a2e&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&f=h_0_0&bw=37669&logo=80000000';
-
-    if (Hls.isSupported()) {
-      var hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        video.play();
-      });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = videoSrc;
-      video.addEventListener('loadedmetadata', function () {
-        video.play();
-      });
-    }
-  </script>
   <div style="display: none">
     <script type="text/javascript" src="https://js.users.51.la/21354177.js"></script>
   </div>
