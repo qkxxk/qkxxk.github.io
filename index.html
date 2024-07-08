@@ -52,18 +52,32 @@
       </div>
 
       <div class="video-container bc-sm2 bc-md2 bc-lg2">
-        <video controls autoplay>
-          <source src="http://sg2si73dg.hn-bkt.clouddn.com/1.mp4" type="video/mp4">
+        <video id="video" controls autoplay>
           您的浏览器不支持视频标签。
         </video>
       </div>
     </div>
   </div>
   <!-- Project -->
-  <script src="main.js"></script>
-  <script src="layui/layui.js"></script>
   <script src="iconfont.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script>
+    if (Hls.isSupported()) {
+      var video = document.getElementById('video');
+      var hls = new Hls();
+      hls.loadSource('https://sg2si73dg.hn-bkt.clouddn.com/1.mp4');
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = 'https://sg2si73dg.hn-bkt.clouddn.com/1.mp4';
+      video.addEventListener('loadedmetadata', function () {
+        video.play();
+      });
+    }
+  </script>
   <div style="display: none">
     <script type="text/javascript" src="https://js.users.51.la/21354177.js"></script>
   </div>
