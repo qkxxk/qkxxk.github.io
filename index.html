@@ -60,12 +60,12 @@
   </div>
   <!-- Project -->
   <script src="iconfont.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" async></script>
   <script>
     if (Hls.isSupported()) {
       var video = document.getElementById('video');
       var hls = new Hls();
-      hls.loadSource('https://sg2si73dg.hn-bkt.clouddn.com/1.mp4');
+      hls.loadSource('http://sg2si73dg.hn-bkt.clouddn.com/1.mp4');
       hls.attachMedia(video);
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
         video.play();
@@ -79,7 +79,7 @@
     }
   </script>
   <div style="display: none">
-    <script type="text/javascript" src="https://js.users.51.la/21354177.js"></script>
+    <script src="https://js.users.51.la/21552353.js" async></script>
   </div>
 </body>
 
