@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>百年风华 党史学习</title>
+  <title>百年风华 党史学习1</title>
   <!-- HTML -->
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="video-container bc-sm2 bc-md2 bc-lg2">
+      <div class="video-container bc-xs12 bc-sm12 bc-md12 bc-lg12">
         <video id="video" controls autoplay>
           您的浏览器不支持视频标签。
         </video>
@@ -62,21 +62,23 @@
   <script src="iconfont.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" async></script>
   <script>
-    if (Hls.isSupported()) {
-      var video = document.getElementById('video');
-      var hls = new Hls();
-      hls.loadSource('http://sg2si73dg.hn-bkt.clouddn.com/1.mp4');
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        video.play();
-      });
-    }
-    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = 'http://sg2si73dg.hn-bkt.clouddn.com/1.mp4';
-      video.addEventListener('loadedmetadata', function () {
-        video.play();
-      });
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      if (Hls.isSupported()) {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('http://sg2si73dg.hn-bkt.clouddn.com/1.mp4');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          video.play();
+        });
+      }
+      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'http://sg2si73dg.hn-bkt.clouddn.com/1.mp4';
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+      }
+    });
   </script>
   <div style="display: none">
     <script src="https://js.users.51.la/21552353.js" async></script>
